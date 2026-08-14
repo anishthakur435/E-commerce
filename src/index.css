@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer mui, tailwind-utilities;
+
+@layer tailwind-utilities {
+  @tailwind utilities;
+}

@@ -1,0 +1,22 @@
+import React from "react";
+import ProductProvider from "../services/context/getProducts";
+import { UserAuthProvider } from "../services/context/userAuth";
+import { ClerkProvider } from "@clerk/react";
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
+
+export default function CustomProvider({ children }) {
+  return (
+    <>
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+        <UserAuthProvider>
+          <ProductProvider>{children}</ProductProvider>
+        </UserAuthProvider>
+      </ClerkProvider>
+    </>
+  );
+}
