@@ -60,7 +60,7 @@ Before running this project, ensure you have:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/e-commerce-app.git
+   git clone https://github.com/anishthakur435/E-commerce
    cd e-commerce-app
    ```
 
@@ -226,14 +226,14 @@ VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 #### 5. **Deploy**
 - Click "Deploy"
 - Wait for the build to complete
-- Your app will be live at the provided Vercel URL (e.g., `your-app.vercel.app`)
+- Your app will be live at the provided Vercel URL (e.g., `https://est-wear.vercel.app/`)
 
 #### 6. **Configure Clerk for Production**
 After deployment:
 1. Go to Clerk Dashboard → Settings → URLs
 2. Add your Vercel domain to **Allowed URLs**:
-   - Allowed Origins: `https://your-app.vercel.app`
-   - Allowed Redirect URLs: `https://your-app.vercel.app/sign-in/*`, `https://your-app.vercel.app/*`
+   - Allowed Origins: `https://est-wear.vercel.app/`
+   - Allowed Redirect URLs: `https://est-wear.vercel.app/`, `https://your-app.vercel.app/*`
 
 ### Optional: Add Custom Domain
 - In Vercel project settings → Domains
@@ -342,18 +342,17 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For issues, questions, or suggestions:
 - **GitHub Issues**: Open an issue on the repository
-- **Email**: [your-email@example.com]
-- **Discord/Community**: [Add your community link]
+- **Email**: [anishthakur435@gmail.com]
 
 ## 🔗 Important Links
 
-- 🌍 **Live Demo**: [Deploy your Vercel URL here]
+- 🌍 **Live Demo**: ("https://est-wear.vercel.app/")
 - 📦 **Repository**: [Your GitHub Repository URL]
 - 🔌 **Backend API**: [Your Backend Repository URL]
 - 👤 **Clerk**: [Your Clerk Project Link]
 
 ---
 
-**Made with ❤️ by [Your Name/Team]**
+**Made with ❤️ by [Anish]**
 
 **Last Updated**: August 2026

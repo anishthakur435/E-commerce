@@ -1,10 +1,12 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import LoginHeader from "./LoginHeader";
 
 function LoginInLayout() {
   return (
     <>
-      <div className="min-h-screen  text-black">
+      <div className="max-h-screen text-black">
+        <LoginHeader />
         <Outlet />
       </div>
     </>
