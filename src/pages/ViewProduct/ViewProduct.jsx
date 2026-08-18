@@ -57,7 +57,7 @@ function ViewProduct() {
 
   return (
     <>
-      <main className="min-h-screen max-w-[1200px] mx-auto p-5 font-sans">
+      <main className="min-h-fit max-w-[1200px] mx-auto p-5 font-sans">
         <div className="flex flex-wrap gap-10">
           <div className="flex-[1_1_500px]">
             <img
