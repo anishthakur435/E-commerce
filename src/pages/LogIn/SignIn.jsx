@@ -61,7 +61,7 @@ function SignIn() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#F7F6F2] px-6 py-16 md:px-10 lg:px-16">
+    <main className="min-h-screen  flex items-center justify-center bg-[#F7F6F2] px-6 py-16 md:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl overflow-hidden border-2 border-[#d33a11]/15 bg-white shadow-[10px_10px_0_#d33a11]">
         <div className="grid lg:grid-cols-[0.9fr_1.4fr]">
           <div className="bg-[#d33a11] p-8 text-white md:p-12">

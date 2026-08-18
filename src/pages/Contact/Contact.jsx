@@ -27,7 +27,7 @@ function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F7F6F2] px-6 py-16 md:px-10 lg:px-16">
+    <main className="min-h-fit bg-[#F7F6F2] px-6 py-16 md:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.4fr]">
           <aside className="relative overflow-hidden border-2 border-[#d33a11]/20 bg-[#f4f1eb] p-8 shadow-[10px_10px_0_#d33a11] md:p-10">
