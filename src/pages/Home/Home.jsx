@@ -58,7 +58,7 @@ export default function HomePage() {
   return (
     <>
       <main className="relative  bg-[#F7F6F2] text-slate-900 ">
-        <div className="absolute top-5 left-0 right-0 z-10 text-center select-none pointer-events-none">
+        <div className="absolute top-5 left-0 right-0 z-10 text-center select-none pointer-events-none ">
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 2, filter: "blur(0px)" }}
@@ -71,12 +71,10 @@ export default function HomePage() {
         </div>
         <Container
           maxWidth="lg"
-          className="relative z-0 py-12 flex flex-col justify-between gap-10 items-center "
+          className="relative z-0 py-19 flex flex-col justify-between gap-10 items-center "
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:min-h-[100vh] justify-between px-4 lg:px-0">
-            <div
-             className="lg:col-span-3 flex flex-col items-center gap-1 z-20 relative lg:top-20 lg:-left-10 xl:-left-20 top-10"
-             >
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:max-h-[70vh] justify-between px-4 lg:px-0  mt-6">
+            <div className="lg:col-span-3 flex flex-col items-center  gap-1 z-20 relative lg:top-20 lg:-left-10 xl:-left-20 top-10 ">
               {[
                 "Raw Stitches",
                 "And",
@@ -89,7 +87,7 @@ export default function HomePage() {
               ].map((text, idx) => (
                 <span
                   key={idx}
-                  className="bg-black text-white font-semibold uppercase text-xl sm:text-2xl lg:text-3xl px-2"
+                  className="bg-black text-white font-semibold uppercase text-md  lg:text-2xl px-2"
                 >
                   {text}
                 </span>
@@ -100,7 +98,7 @@ export default function HomePage() {
               <img
                 src={imagebg1}
                 alt="[E-S-T]"
-                className="w-full max-w-sm sm:max-w-md lg:max-w-none lg:min-w-[500px] xl:min-w-[700px] object-cover drop-shadow-md"
+                className="w-full max-w-sm sm:max-w-md  xl:min-w-[700px] object-cover drop-shadow-md"
               />
             </div>
 
@@ -150,8 +148,8 @@ export default function HomePage() {
         {/*  */}
         <Box className="w-full  mt-4 z-20 overflow-hidden ">
           <Typography
-            variant="h3"
-            className="font-black mb-6 px-4 text-[#cc3300]"
+            variant="h4"
+            className="font-black mb-6 px-4 text-[#cc3300] lg:text-4xl"
           >
             Choose Your Fit
           </Typography>

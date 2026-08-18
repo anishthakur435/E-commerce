@@ -65,6 +65,42 @@ function Footer() {
                     </a>
                   </Typography>
                 </Box>
+
+                <Box
+                  sx={{
+                    display: { xs: "flex", md: "none" },
+                  }}
+                  className="flex flex-col  text-left  justify-end py-5 "
+                >
+                  <Typography
+                    variant="subtitle1"
+                    className="mb-4 font-bold uppercase tracking-widest underline"
+                  >
+                    FOLLOW
+                  </Typography>
+                  <Box className="flex flex-col gap-2">
+                    <Typography
+                      component="a"
+                      href="https://www.linkedin.com/in/anishthakur435"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="body2"
+                      className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
+                    >
+                      LinkedIn
+                    </Typography>
+                    <Typography
+                      component="a"
+                      href="https://github.com/anishthakur435"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="body2"
+                      className="hover:underline opacity-90 hover:opacity-100 transition-opacity"
+                    >
+                      Github
+                    </Typography>
+                  </Box>
+                </Box>
               </Box>
             </Grid>
 
@@ -97,6 +133,9 @@ function Footer() {
 
             {/*  */}
             <Grid
+              sx={{
+                display: { xs: "none", md: "flex" },
+              }}
               xs={12}
               md={4}
               className="flex flex-col items-start  text-left md:text-right justify-end mt-4 md:mt-0"
