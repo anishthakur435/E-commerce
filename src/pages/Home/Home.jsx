@@ -71,9 +71,9 @@ export default function HomePage() {
         </div>
         <Container
           maxWidth="lg"
-          className="relative z-0 py-19 flex flex-col justify-between gap-10 items-center "
+          className="relative z-0 pt-19 flex flex-col justify-between gap-10 items-center "
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:max-h-[70vh] justify-between px-4 lg:px-0  mt-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:max-h-[70vh] justify-between px-4 lg:px-0  md:mt-6">
             <div className="lg:col-span-3 flex flex-col items-center  gap-1 z-20 relative lg:top-20 lg:-left-10 xl:-left-20 top-10 ">
               {[
                 "Raw Stitches",
@@ -87,7 +87,7 @@ export default function HomePage() {
               ].map((text, idx) => (
                 <span
                   key={idx}
-                  className="bg-black text-white font-semibold uppercase text-md  lg:text-2xl px-2"
+                  className="bg-black text-white font-semibold uppercase text-xs  lg:text-2xl px-2"
                 >
                   {text}
                 </span>
