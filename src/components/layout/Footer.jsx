@@ -16,14 +16,14 @@ function Footer() {
     <>
       <footer className="bg-[#d9381e] text-white   font-mono">
         <Box className="max-w-7xl mx-auto">
-          <Grid container spacing={4} className="justify-between p-8">
+          <Grid container spacing={1} className="justify-between p-8">
             {/*
              */}
             <Grid xs={12} md={4} className="flex flex-col ">
               <Box className="mb-12 md:mb-0 justify-between flex flex-col">
                 <Typography
                   variant="h4"
-                  className="font-bold tracking-widest uppercase mb-16"
+                  className="font-bold tracking-widest uppercase mb-14"
                 >
                   [E-S-T]
                   <Typography
@@ -72,9 +72,9 @@ function Footer() {
             <Grid
               xs={12}
               md={4}
-              className="flex justify-center items-center py-8 md:py-0"
+              className="flex justify-center items-center lg:py-8 md:py-0"
             >
-              <div className="flex flex-col items-center z-20 text-center leading-none">
+              <div className=" flex flex-col items-center gap-1 ">
                 {[
                   "Oversized",
                   "Fits And",
@@ -99,7 +99,7 @@ function Footer() {
             <Grid
               xs={12}
               md={4}
-              className="flex flex-col items-start md:items-end text-left md:text-right justify-end mt-4 md:mt-0"
+              className="flex flex-col items-start  text-left md:text-right justify-end mt-4 md:mt-0"
             >
               <Box>
                 <Typography
@@ -135,10 +135,8 @@ function Footer() {
           </Grid>
 
           {/*  */}
-          <Box className="border-t p-5 text-xs opacity-75 flex flex-col sm:flex-row  gap-2 justify-between">
-            <Typography variant="caption">
-              © {year} by [E-S-T] wear.
-            </Typography>
+          <Box className="border-t p-5 text-xs opacity-75 flex flex-row   gap-2 justify-between">
+            <Typography variant="caption">© {year} by [E-S-T] wear.</Typography>
             <Typography variant="caption">
               Created by
               <span className="uppercase"> anish</span>

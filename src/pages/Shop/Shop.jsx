@@ -31,7 +31,7 @@ function Shop() {
             }
 
             return (
-              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product.id}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 , lg:3 }} key={product.id}>
                 <Card className="h-full overflow-hidden border border-[#e7dfd4] bg-white shadow-[0_0_0_1px_rgba(211,58,17,0.04)] transition-shadow duration-200 hover:shadow-lg">
                   <Box className="flex h-full flex-col justify-between">
                     <div className="group overflow-hidden bg-[#f5f1eb]">
@@ -51,7 +51,7 @@ function Shop() {
                           });
                         }}
                         alt={product.title}
-                        className="h-[360px] w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-105 line-clamp-1"
+                        className="h-[360px] w-full cursor-pointer object-cover  group-hover:scale-105 "
                       />
                     </div>
 

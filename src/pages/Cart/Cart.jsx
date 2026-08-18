@@ -57,8 +57,8 @@ function Cart() {
           </Typography>
         </div>
 
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start">
-          <div className="flex-1 rounded-none border border-[#eadfd5] bg-white p-4 shadow-sm sm:p-6">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start ">
+          <div className="flex-1 rounded-none border border-[#eadfd5] bg-white p-4 shadow-sm sm:p-1">
             <div className="space-y-0">
               {cart.map((product) => {
                 const productCount = cart.find(
@@ -129,7 +129,7 @@ function Cart() {
                       </span>
                     </div>
 
-                    <div className="w-full text-left sm:w-1/12 sm:text-right">
+                    <div className="w-full text-right sm:w-1/12 sm:text-right">
                       <IconButton
                         onClick={() => deleteFromCart(product?.id)}
                         sx={{ color: "#d33a11" }}

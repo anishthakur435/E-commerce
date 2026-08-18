@@ -25,7 +25,13 @@ export default function LoginHeader() {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar sx={{ justifyContent: "space-between", py: 1 }}>
+        <Toolbar
+          sx={{
+            minHeight: { xs: 64, md: 72 },
+            px: { xs: 2, sm: 3, md: 0 },
+            justifyContent: "space-between",
+          }}
+        >
           {/* Back Button */}
           <Button
             component={Link}

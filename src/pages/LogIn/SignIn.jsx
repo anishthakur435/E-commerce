@@ -63,7 +63,7 @@ function SignIn() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#F7F6F2] px-6 py-16 md:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl overflow-hidden border-2 border-[#d33a11]/15 bg-white shadow-[10px_10px_0_#d33a11]">
-        <div className="grid md:grid-cols-2 ">
+        <div className="grid lg:grid-cols-[0.9fr_1.4fr]">
           <div className="bg-[#d33a11] p-8 text-white md:p-12">
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-white/80">
               Welcome back
@@ -93,8 +93,7 @@ function SignIn() {
               </div>
             </div>
           </div>
-
-          <div className="bg-white p-8 md:p-12  min-w-lg">
+          <section className="border-2 border-[#d33a11]/15 bg-white p-6 shadow-[0_0_0_1px_rgba(211,58,17,0.08)] md:p-10">
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#d33a11]">
               Account
             </p>
@@ -104,7 +103,7 @@ function SignIn() {
 
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="mt-8 flex flex-col gap-5"
+              className="mt-8 flex flex-col gap-5 "
             >
               <FormField
                 name="email"
@@ -168,7 +167,7 @@ function SignIn() {
                 </Link>
               </Typography>
             </form>
-          </div>
+          </section>
         </div>
       </div>
     </main>

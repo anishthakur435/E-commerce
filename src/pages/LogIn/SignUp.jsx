@@ -104,18 +104,12 @@ function SignUp() {
         });
         if (finalizeError) {
           console.error("Finalize  error:", finalizeError);
-          Toaster(
-            "error",
-            finalizeError.message || "Unable to signup.",
-          );
+          Toaster("error", "Unable to signup.");
           return;
         }
         Toaster("success", "Account successfully created.");
       } else {
-        Toaster(
-          "error",
-          "email  verified, but  signup is not complete.",
-        );
+        Toaster("error", "email  verified, but  signup is not complete.");
       }
     } catch (error) {
       console.error("Verification error:", error);
@@ -174,9 +168,9 @@ function SignUp() {
 
           {!isVerificationStep ? (
             /* 
-              SIGNUP FORM
-             *  */
-            <div className="bg-white p-8 md:p-12 min-w-lg">
+            
+               */
+            <div className="border-2 border-[#d33a11]/15 bg-white p-6 shadow-[0_0_0_1px_rgba(211,58,17,0.08)] md:p-10">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#d33a11]">
                 Register
               </p>
@@ -189,7 +183,7 @@ function SignUp() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="mt-8 flex flex-col gap-5"
               >
-                {/* NAME */}
+                {/*  */}
                 <div className="grid gap-5 md:grid-cols-2">
                   <FormField
                     name="firstName"
@@ -210,7 +204,7 @@ function SignUp() {
                   />
                 </div>
 
-                {/* EMAIL */}
+                {/*  */}
                 <FormField
                   name="email"
                   control={control}
@@ -225,7 +219,7 @@ function SignUp() {
                   type="email"
                 />
 
-                {/* PASSWORD */}
+                {/*  */}
                 <FormField
                   name="password"
                   control={control}
@@ -244,7 +238,7 @@ function SignUp() {
                   type="password"
                 />
 
-                {/* CONFIRM PASSWORD */}
+                {/*  */}
                 <FormField
                   name="confirmPassword"
                   control={control}
@@ -257,7 +251,7 @@ function SignUp() {
                   type="password"
                 />
 
-                {/* SUBMIT */}
+                {/*  */}
                 <Button
                   type="submit"
                   fullWidth
@@ -280,7 +274,7 @@ function SignUp() {
                   {isSubmitting ? "Creating Account..." : "Create Account"}
                 </Button>
 
-                {/* SIGN IN */}
+                {/*  */}
                 <Typography
                   variant="body2"
                   sx={{

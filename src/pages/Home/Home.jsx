@@ -71,11 +71,12 @@ export default function HomePage() {
         </div>
         <Container
           maxWidth="lg"
-          className="relative z-0 py-12 flex flex-col justify-between gap-10 items-center"
+          className="relative z-0 py-12 flex flex-col justify-between gap-10 items-center "
         >
-          <div className="grid grid-cols-1 md:grid-cols-12 items-center w-full gap-6 min-h-[80vh] justify-between">
-            {/*  */}
-            <div className="md:col-span-3 flex flex-col items-center gap-1 z-20  justify-between  top-20 -left-20 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:min-h-[100vh] justify-between px-4 lg:px-0">
+            <div
+             className="lg:col-span-3 flex flex-col items-center gap-1 z-20 relative lg:top-20 lg:-left-10 xl:-left-20 top-10"
+             >
               {[
                 "Raw Stitches",
                 "And",
@@ -88,26 +89,25 @@ export default function HomePage() {
               ].map((text, idx) => (
                 <span
                   key={idx}
-                  className="bg-black text-white  font-semibold uppercase text-3xl"
+                  className="bg-black text-white font-semibold uppercase text-xl sm:text-2xl lg:text-3xl px-2"
                 >
                   {text}
                 </span>
               ))}
             </div>
-            {/*  */}
-            <div className="md:col-span-6 flex justify-center relative z-10 my-4 md:my-0">
+
+            <div className="lg:col-span-6 flex justify-center relative z-10 my-6 lg:my-0 w-full">
               <img
                 src={imagebg1}
                 alt="[E-S-T]"
-                className="min-w-[700px] max-w-sm md:max-w-md object-cover drop-shadow-md"
+                className="w-full max-w-sm sm:max-w-md lg:max-w-none lg:min-w-[500px] xl:min-w-[700px] object-cover drop-shadow-md"
               />
             </div>
 
-            {/*  */}
-            <div className="md:col-span-3 flex flex-col items-start md:items-end gap-6 z-20 ">
-              <div className="w-full">
+            <div className="lg:col-span-3 flex flex-col items-center lg:items-end gap-6 z-20 w-full">
+              <div className="w-full flex justify-center lg:justify-end">
                 <motion.div
-                  className="text-right md:text-right font-mono text-xs md:text-sm text-slate-800 tracking-wider w-max"
+                  className="text-center lg:text-right font-mono text-xs md:text-sm text-slate-800 tracking-wider w-fit"
                   animate={{ y: [0, -8, 8, -8, 8, 0] }}
                   transition={{
                     duration: 3,
@@ -116,10 +116,10 @@ export default function HomePage() {
                     ease: "easeInOut",
                   }}
                 >
-                  <p className="font-bold">
+                  <p className="font-extrabold">
                     &nbsp; //&nbsp;RAW_STITCHES &nbsp;//&nbsp; UNAPOLOGETIC_FITS
                   </p>
-                  <p>// CONCRETE JUNGLE</p>
+                  <p className="font-extrabold">// CONCRETE JUNGLE</p>
                 </motion.div>
               </div>
 
@@ -129,10 +129,9 @@ export default function HomePage() {
                 to="/shop"
                 disableElevation
                 sx={{
-                  alignContent: "start",
                   backgroundColor: "#D13B19",
                   color: "#FFFFFF",
-                  paddingX: 3,
+                  paddingX: { xs: 4, lg: 3 },
                   paddingY: 1.5,
                   fontSize: "0.8rem",
                   fontWeight: "bold",

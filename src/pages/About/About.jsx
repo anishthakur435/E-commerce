@@ -16,33 +16,22 @@ function About() {
               alt="Essential  Street Tear"
               className="w-full h-auto object-cover shadow-2xl"
             />
-            {/* <motion.Typography
-              initial={{ x: 500, opacity: 0 }}
+
+            <Typography
+              component={motion.h1}
+              initial={{ x: -500, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{
                 type: "spring",
                 stiffness: 500,
                 damping: 20,
-                duration: 0.15,
+                duration: 0.4,
               }}
-            > */}
-              <Typography
-                component={motion.h1}
-                initial={{ x: 500, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 20,
-                  duration: 0.4,
-                }}
-                variant="h2"
-                // component="h1"
-                className="absolute -top-12 left-1/2 -translate-x-1/2 lg:-right-16 lg:left-auto lg:translate-x-0 z-20 text-[#d33a11] font-black tracking-widest drop-shadow-md text-6xl md:text-8xl"
-              >
-                [E-S-T]
-              </Typography>
-            {/* </motion.Typography> */}
+              variant="h3"
+              className="absolute -top-12 left-1/2 -translate-x-1/2 lg:-right-16 lg:left-auto lg:translate-x-0 z-20 text-[#d33a11] font-black tracking-widest drop-shadow-md text-6xl md:text-8xl"
+            >
+              [E-S-T]
+            </Typography>
           </div>
         </div>
 

@@ -91,8 +91,6 @@ function CheckOut() {
       navigate("/receipt");
       Toaster("success", `Order Placed — ${order.id}`);
     } catch (error) {
-      console.error("Error placing order:", error);
-
       Toaster("error", "Error placing order");
     }
   };
