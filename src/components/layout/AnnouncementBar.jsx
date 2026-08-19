@@ -10,9 +10,9 @@ function AnnouncementBar() {
           <motion.div
             className="flex flex-row w-max"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 13, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 32, repeat: Infinity }}
           >
-            {[...Array(8)].map((_, index) => (
+            {[...Array(28)].map((_, index) => (
               <Typography
                 key={index}
                 sx={{

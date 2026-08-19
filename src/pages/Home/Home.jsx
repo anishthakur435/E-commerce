@@ -10,22 +10,26 @@ import {
   TextField,
 } from "@mui/material";
 import imagebg1 from "../../assets/images/bgImg1.jpg";
+import peace from "../../assets/images/peace.jpg";
+import model from "../../assets/images/model.jpg";
+import fashion from "../../assets/images/fashion.jpg";
 import { motion } from "framer-motion";
 import AxiosApi from "../../services/api";
 import { ProductContext } from "../../services/context/getProducts";
 import { Link, useNavigate } from "react-router-dom";
 import { Add, Remove } from "@mui/icons-material";
 import ButtonCard from "../../components/Reusable/ButtonCard";
-import Newsletter from "../../components/layout/Newsletter";
+import Newsletter from "./Newsletter";
+import Banner from "./Banner";
 
 export default function HomePage() {
-  // router helpers
   const navigate = useNavigate();
 
   // product state and cart actions from context
   const {
     products,
     addToCart,
+    productCategory,
     getSingleProduct,
     cart,
     updateCartItemQuantity,
@@ -55,26 +59,49 @@ export default function HomePage() {
     );
   }
 
+  const perksData = [
+    {
+      id: "01.",
+      title: "CONCRETE JUNGLE DELIVERY",
+      description:
+        "Get your gear fast. The streets won't wait for you to flex those unapologetic fits.",
+    },
+    {
+      id: "02.",
+      title: "UNAPOLOGETIC EXCHANGES",
+      description:
+        "Need a different size for that perfect oversized fit? Swap it out fast for store credit.",
+    },
+    {
+      id: "03.",
+      title: "SECURE CHECKOUT",
+      description:
+        "Encrypted checkout shields every drop. Shop safe, stay raw, and survive the jungle.",
+    },
+  ];
+
   return (
     <>
-      <main className="relative  bg-[#F7F6F2] text-slate-900 ">
-        <div className="absolute top-5 left-0 right-0 z-10 text-center select-none pointer-events-none ">
+      <main className="relative bg-[#F7F6F2] text-slate-900">
+        <div className="absolute top-5 left-0 right-0 z-10 text-center select-none pointer-events-none">
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 2, filter: "blur(0px)" }}
             transition={{ duration: 1, ease: "easeIn" }}
           >
-            <h1 className="text-[16vw]  font-black  text-[#d9381e] leading-none uppercase font-serif">
+            <h1 className="xl:text-[16vh] text-[16vw] font-black text-[#d9381e] leading-none uppercase font-serif">
               [E-S-T]
             </h1>
           </motion.div>
         </div>
+
+        {/*  Container */}
         <Container
-          maxWidth="lg"
-          className="relative z-0 pt-19 flex flex-col justify-between gap-10 items-center "
+          maxWidth="4xl"
+          className=" relative z-0 pt-19 flex flex-col justify-between gap-10 items-center"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:max-h-[70vh] justify-between px-4 lg:px-0  md:mt-6">
-            <div className="lg:col-span-3 flex flex-col items-center  gap-1 z-20 relative lg:-top-10 lg:-left-10 xl:-left-20 top-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center w-full gap-8 lg:gap-6 lg:max-h-[70vh] justify-between px-4 lg:px-0 md:mt-6">
+            <div className="lg:col-span-3 flex flex-col items-center gap-1 z-20 relative lg:-top-10 lg:-left-10 xl:-left-20 top-10">
               {[
                 "Raw Stitches",
                 "And",
@@ -87,7 +114,7 @@ export default function HomePage() {
               ].map((text, idx) => (
                 <span
                   key={idx}
-                  className="bg-black text-white font-semibold uppercase text-xs  lg:text-2xl px-2"
+                  className="bg-black text-white font-semibold uppercase text-xs lg:text-2xl px-2"
                 >
                   {text}
                 </span>
@@ -98,7 +125,7 @@ export default function HomePage() {
               <img
                 src={imagebg1}
                 alt="[E-S-T]"
-                className="w-full max-w-sm sm:max-w-md  xl:min-w-[700px] object-cover drop-shadow-md"
+                className="w-full max-w-sm sm:max-w-md xl:min-w-[700px] object-cover drop-shadow-md"
               />
             </div>
 
@@ -145,30 +172,27 @@ export default function HomePage() {
           </div>
         </Container>
 
-        {/*  */}
-        <Box className="w-full  mt-4 z-20 overflow-hidden ">
+        {/* All Products  */}
+        <Box className="w-full mt-4 z-20 overflow-hidden">
           <Typography
             variant="h4"
             className="font-black mb-6 px-4 text-[#cc3300] lg:text-4xl"
           >
-            Choose Your Fit
+            Choose Your Street favorites
           </Typography>
 
-          <div className="flex overflow-x-auto scrollbar-none  ">
+          <div className="flex overflow-x-auto scrollbar-none">
             {products &&
-              products.slice(0, 10).map((product, index) => {
-                const isInCart = cart.find((item) => item.id === product.id);
-                const qty = isInCart?.quantity;
-
+              products.slice(0, 15).map((product, index) => {
                 return (
                   <div
                     key={product.id || index}
-                    className="flex flex-col justify-between min-w-[260px] max-w-[260px]  border border-[#aa2200] bg-white"
+                    className="flex flex-col justify-between min-w-[260px] max-w-[260px] border border-[#aa2200] bg-white"
                   >
                     <div className="w-full h-64 bg-gray-100">
                       <img
                         onClick={() => getSingleProduct(product)}
-                        src={product.images[0]}
+                        src={product.images ? product.images[0] : product.image}
                         alt={product.title || "Product Image"}
                         className="w-full h-full object-cover cursor-pointer"
                       />
@@ -179,7 +203,7 @@ export default function HomePage() {
                       addToCart={addToCart}
                     />
 
-                    <div className="flex flex-col items-center justify-between p-4  flex-grow">
+                    <div className="flex flex-col items-center justify-between p-4 flex-grow">
                       <Typography
                         onClick={() => getSingleProduct(product)}
                         variant="caption"
@@ -195,8 +219,8 @@ export default function HomePage() {
                 );
               })}
 
-            {products && products?.length > 10 && (
-              <div className="flex flex-col justify-center items-center min-w-[260px] border border-[#cc3300] p-6 bg-white hover:bg-[#fff9f8] ">
+            {products && products?.length > 15 && (
+              <div className="flex flex-col justify-center items-center min-w-[260px] border border-[#cc3300] p-6 bg-white hover:bg-[#fff9f8]">
                 <span className="font-semibold text-[#cc3300] text-xl uppercase mb-6 text-center">
                   More Options
                 </span>
@@ -225,13 +249,14 @@ export default function HomePage() {
           </div>
         </Box>
 
-        <div className="flex flex-row overflow-hidden whitespace-nowrap bg-black text-white uppercase text-5xl ">
+        {/*  Banner */}
+        <div className="flex flex-row overflow-hidden whitespace-nowrap bg-black text-white uppercase text-5xl mt-12">
           <motion.div
             className="flex flex-row w-max"
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ ease: "linear", duration: 10, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           >
-            {[...Array(12)].map((_, index) => (
+            {[...Array(48)].map((_, index) => (
               <Typography
                 className="flex flex-row items-center"
                 key={index}
@@ -256,8 +281,7 @@ export default function HomePage() {
             ))}
           </motion.div>
         </div>
-
-        {/*  */}
+        <Banner />
         <Newsletter />
       </main>
     </>

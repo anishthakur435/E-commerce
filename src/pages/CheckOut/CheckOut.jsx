@@ -133,23 +133,23 @@ function CheckOut() {
   }
 
   return (
-    <main className="min-h-full text-slate-900">
-      <div className="mx-auto flex max-w-7xl flex-col md:flex-row">
-        <div className="w-fit bg-white p-8 md:w-1/2 md:border-r md:border-[#eadfd5] md:p-12">
+    <main className="min-h-full text-slate-900 bg-[#f7f6f2] lg:bg-white">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-2 min-h-screen">
+        <div className="bg-white p-4 sm:p-8 md:border-r md:border-[#eadfd5] lg:p-12">
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#d33a11]">
             Checkout
           </p>
 
           <Typography
-            variant="h4"
+            variant="h5"
             component="h1"
-            className="mt-3 font-black uppercase tracking-[0.08em] text-slate-900"
+            className="mt-3 font-black uppercase tracking-[0.08em] text-slate-900 text-lg sm:text-2xl"
           >
             Checkout Details
           </Typography>
 
           <form
-            className="mt-8 w-full max-w-lg flex flex-col gap-4"
+            className="mt-6 sm:mt-8 w-full flex flex-col gap-3 sm:gap-4"
             onSubmit={handleSubmit(onSubmit)}
           >
             <FormField
@@ -191,7 +191,7 @@ function CheckOut() {
               }}
             />
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
               <FormField
                 name="city"
                 control={control}
@@ -232,13 +232,14 @@ function CheckOut() {
             <Button
               type="submit"
               variant="contained"
-              className="mt-6 w-full bg-[#d33a11] hover:bg-[#b62b12]"
+              className="mt-4 sm:mt-6 w-full bg-[#d33a11] hover:bg-[#b62b12]"
               sx={{
                 borderRadius: 0,
-                py: 1.5,
+                py: { xs: 1, sm: 1.5 },
                 fontWeight: 800,
                 letterSpacing: "0.12em",
                 backgroundColor: "#d9381e",
+                fontSize: { xs: "0.875rem", sm: "1rem" },
               }}
             >
               Place Order
@@ -246,11 +247,12 @@ function CheckOut() {
           </form>
         </div>
 
-        <div className="w-full p-8 md:w-1/2 md:p-12 lg:px-20">
-          <div className="flex items-center justify-between border-b border-[#e7dfd4] pb-4">
+        <div className="w-full p-4 sm:p-8 lg:p-12 bg-white md:bg-transparent">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[#e7dfd4] pb-3 sm:pb-4 gap-2 sm:gap-0">
             <Typography
-              variant="h6"
-              className="font-black uppercase tracking-[0.08em] text-slate-900"
+              variant="body2"
+              component="h2"
+              className="font-black uppercase tracking-[0.08em] text-slate-900 text-xs sm:text-base"
             >
               Order Summary ({displayCount} items)
             </Typography>
@@ -271,7 +273,7 @@ function CheckOut() {
             )}
           </div>
 
-          <div className="max-h-[350px] mt-6 space-y-6 container overflow-auto scrollbar-none">
+          <div className="max-h-[300px] sm:max-h-[350px] mt-4 sm:mt-6 space-y-4 sm:space-y-6 overflow-auto scrollbar-none">
             {displayCart.map((product) => {
               const qty = product?.quantity || 1;
 
@@ -280,11 +282,11 @@ function CheckOut() {
               return (
                 <div
                   key={product.id || product.sku}
-                  className="flex items-center justify-between gap-4 border-b border-[#e7dfd4] pb-5"
+                  className="flex items-center justify-between gap-3 sm:gap-4 border-b border-[#e7dfd4] pb-4 sm:pb-5"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-20 w-20 shrink-0 overflow-hidden bg-[#f5f1eb]">
-                      <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center bg-slate-900 text-[10px] font-bold text-white">
+                  <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+                    <div className="relative h-16 sm:h-20 w-16 sm:w-20 shrink-0 overflow-hidden bg-[#f5f1eb]">
+                      <span className="absolute -right-1 -top-1 flex h-4 sm:h-5 w-4 sm:w-5 items-center justify-center bg-slate-900 text-[8px] sm:text-[10px] font-bold text-white">
                         {qty}
                       </span>
 
@@ -296,10 +298,10 @@ function CheckOut() {
                       />
                     </div>
 
-                    <div className="flex flex-col">
+                    <div className="flex flex-col min-w-0">
                       <Typography
-                        variant="body1"
-                        className="font-semibold text-slate-900"
+                        variant="body2"
+                        className="font-semibold text-slate-900 text-xs sm:text-base line-clamp-2"
                       >
                         {product?.title || "Unknown Product"}
                       </Typography>
@@ -307,7 +309,7 @@ function CheckOut() {
                       {product?.sku && (
                         <Typography
                           variant="caption"
-                          className="mt-1 text-slate-500"
+                          className="mt-0.5 sm:mt-1 text-slate-500 text-[10px] sm:text-xs"
                         >
                           SKU: {product.sku}
                         </Typography>
@@ -316,7 +318,7 @@ function CheckOut() {
                       {product?.size && (
                         <Typography
                           variant="caption"
-                          className="text-slate-500"
+                          className="text-slate-500 text-[10px] sm:text-xs"
                         >
                           Size: {product.size}
                         </Typography>
@@ -325,8 +327,8 @@ function CheckOut() {
                   </div>
 
                   <Typography
-                    variant="body1"
-                    className="font-mono font-semibold text-slate-900"
+                    variant="body2"
+                    className="font-mono font-semibold text-slate-900 text-xs sm:text-base whitespace-nowrap"
                   >
                     ${lineTotal}
                   </Typography>
@@ -335,9 +337,11 @@ function CheckOut() {
             })}
           </div>
 
-          <div className="mt-6 rounded-sm border border-[#e7dfd4] p-4">
-            <FormControl>
-              <FormLabel>Payment Type</FormLabel>
+          <div className="mt-4 sm:mt-6 rounded-sm border border-[#e7dfd4] p-3 sm:p-4">
+            <FormControl fullWidth size="small">
+              <FormLabel sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}>
+                Payment Type
+              </FormLabel>
 
               <Controller
                 name="paymentType"
@@ -349,8 +353,12 @@ function CheckOut() {
                   <RadioGroup {...field}>
                     <FormControlLabel
                       value="Cash on Delivery"
-                      control={<Radio />}
-                      label="Cash on Delivery"
+                      control={<Radio size="small" />}
+                      label={
+                        <Typography variant="body2" className="text-xs sm:text-sm">
+                          Cash on Delivery
+                        </Typography>
+                      }
                     />
                   </RadioGroup>
                 )}
@@ -358,14 +366,14 @@ function CheckOut() {
             </FormControl>
           </div>
 
-          <div className="mt-5 border-t border-[#e7dfd4] py-5">
-            <div className="mb-2 flex justify-between font-mono text-slate-700">
+          <div className="mt-4 sm:mt-5 border-t border-[#e7dfd4] py-3 sm:py-5">
+            <div className="mb-2 flex justify-between font-mono text-xs sm:text-sm text-slate-700">
               <span>Subtotal</span>
 
               <span>${displayTotal?.toFixed(2) || "0.00"}</span>
             </div>
 
-            <div className="flex justify-between text-xl font-mono font-bold text-slate-900">
+            <div className="flex justify-between text-base sm:text-xl font-mono font-bold text-slate-900">
               <span>Total</span>
 
               <span>${displayTotal?.toFixed(2) || "0.00"}</span>

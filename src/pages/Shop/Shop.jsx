@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Typography, Grid, Card, CardMedia, Box } from "@mui/material";
 import { ProductContext } from "../../services/context/getProducts";
 import ButtonCard from "../../components/Reusable/ButtonCard";
+import ProductGallery from "./ProductGallery";
 
 function Shop() {
   const { products, addToCart, getSingleProduct, cart } =
@@ -24,7 +25,8 @@ function Shop() {
           </Typography>
         </div>
 
-        <Grid container spacing={3}>
+        <ProductGallery />
+        {/* <Grid container spacing={3}>
           {products.slice(0, 48).map((product) => {
             if (!product.images?.[0] || brokenImages.has(product.id)) {
               return null;
@@ -51,7 +53,7 @@ function Shop() {
                           });
                         }}
                         alt={product.title}
-                        className="h-[360px] w-full cursor-pointer object-cover  group-hover:scale-105 "
+                        className="h-[360px] w-full cursor-pointer object-cover  group-hover:scale-105  transition-transform duration-700 "
                       />
                     </div>
 
@@ -81,7 +83,7 @@ function Shop() {
               </Grid>
             );
           })}
-        </Grid>
+        </Grid> */}
       </div>
     </main>
   );

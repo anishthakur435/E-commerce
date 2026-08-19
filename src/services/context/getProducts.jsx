@@ -27,6 +27,11 @@ export default function ProductProvider({ children }) {
     fetchProducts();
   }, []);
 
+  //
+  const productCategory = Array.from(
+    new Set(products.map((products) => products.category.name)),
+  );
+
   // Function To Add Items to cart  with quantity
   const addToCart = (product, quantity) => {
     setCart((prev) => {
@@ -111,6 +116,7 @@ export default function ProductProvider({ children }) {
     <ProductContext.Provider
       value={{
         products,
+        productCategory,
         cart,
         addToCart,
         deleteFromCart,
